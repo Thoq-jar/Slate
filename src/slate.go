@@ -10,10 +10,10 @@ import (
 /**
  * Function: serveFile
  * Purpose: Serve a file
- * Use: serveFile(dir, file, host, port)
+ * Use: serveFile(rootDir, file, host, port)
  * @see Begin
  */
-//goland:noinspection ALL
+//goland:noinspection HttpUrlsUsage
 func serveFile(rootDir, file, host, port string) {
 	address := fmt.Sprintf("%s:%s", host, port)
 	if host == "0.0.0.0" {
@@ -34,9 +34,10 @@ func serveFile(rootDir, file, host, port string) {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
+		w.Header().Set("X-Powered-By", "Slate")
+		w.Header().Set("Server", "Slate")
 		http.FileServer(http.Dir(rootDir)).ServeHTTP(w, r)
 		duration := time.Since(start)
-
 		logTraffic(r.URL.Path, duration)
 	})
 
@@ -48,16 +49,16 @@ func serveFile(rootDir, file, host, port string) {
 
 /**
  * Function: getLocalIP
- * Purpose: Get the computers IP address
- * Use: getLocalIP(string, error)
+ * Purpose: Get the computer's IP address
+ * Use: getLocalIP() (string, error)
  * @see serveFile
  */
 func getLocalIP() (string, error) {
-	addrs, err := net.InterfaceAddrs()
+	address, err := net.InterfaceAddrs()
 	if err != nil {
 		return "", err
 	}
-	for _, addr := range addrs {
+	for _, addr := range address {
 		if ipnet, ok := addr.(*net.IPNet); ok && !ipnet.IP.IsLoopback() && ipnet.IP.To4() != nil {
 			return ipnet.IP.String(), nil
 		}
