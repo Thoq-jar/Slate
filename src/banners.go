@@ -2,6 +2,8 @@ package slate
 
 import "fmt"
 
+// Purple //
+// Reset //
 /**
  * Variables: Purple, Reset
  * Purpose: Define global ansi escape codes
@@ -9,6 +11,10 @@ import "fmt"
 var Purple = "\033[35m"
 var Reset = "\033[0m"
 
+// Logo //
+// Name //
+// Version //
+// Information //
 /**
  * Variables: Logo, Name, Version, Information
  * Purpose: Define global information about slate

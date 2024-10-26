@@ -13,6 +13,7 @@ import (
  * Use: serveFile(dir, file, host, port)
  * @see Begin
  */
+//goland:noinspection ALL
 func serveFile(rootDir, file, host, port string) {
 	address := fmt.Sprintf("%s:%s", host, port)
 	if host == "0.0.0.0" {

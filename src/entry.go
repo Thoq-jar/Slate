@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 )
 
+// Begin //
 /**
  * Function: Begin
  * Purpose: Start Slate

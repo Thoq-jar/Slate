@@ -1,5 +1,6 @@
 package slate
 
+// Slate //
 /**
  * Struct: Slate
  * Purpose: Define config structure

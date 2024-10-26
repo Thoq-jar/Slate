@@ -64,7 +64,7 @@ func cleanup() {
 	if logFile != nil {
 		err := logFile.Close()
 		if err != nil {
-			fmt.Print("[%s] Failed to close log file!\n", Name)
+			fmt.Printf("[%s] Failed to close log file!\n", Name)
 		}
 	}
 }
