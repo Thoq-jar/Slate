@@ -21,5 +21,5 @@ var Reset = "\033[0m"
  */
 var Logo = Purple + "●" + Reset
 var Name = "Slate"
-var Version = 1.0
+var Version = 1.1
 var Information = fmt.Sprintf("%s %.1f", Name, Version)
