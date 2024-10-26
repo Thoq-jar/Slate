@@ -3,7 +3,7 @@ slate:
   # Define project settings
   project:
     package-manager: "slate"
-    root-dir: "."
+    root-dir: "demo"
     main: "index.html"
     host: "0.0.0.0"
     port: "11111"

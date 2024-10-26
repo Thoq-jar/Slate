@@ -1,3 +1,4 @@
 logs/
 go.sum
-*.iml
+Slate.iml
+.idea
