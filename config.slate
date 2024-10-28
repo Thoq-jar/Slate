@@ -1,6 +1,6 @@
 host:127.0.0.1
 port:22222
-src:./
+src:./demo
 main:index.html
 404:404.html
 routes:/=index.html|/test=test.html
