@@ -1,0 +1,6 @@
+root:./examples
+host:127.0.0.1
+port:22222
+main:index.html
+404:404.html
+routes:/=index.html|/test=test.html
